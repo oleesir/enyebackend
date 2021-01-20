@@ -2,13 +2,55 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 
+app.get('/', (req, res) => {
+	return res.status(400).json({
+		message: "Welcome to Olisa's Enye backend challenge",
+		routes: {
+			rates: {
+				url: '/api/rates',
+				query: {
+					base: {
+						validation: 'Required',
+						example: '/api/rates?base=USD',
+					},
+					currency: {
+						validation: 'Optional. Defaults to all rates',
+						example: '/api/rates?base=USD&currency=CAD,CZK',
+					},
+				},
+			},
+		},
+	});
+});
+
+app.get('/api', (req, res) => {
+	return res.status(400).json({
+		message: "Welcome to Olisa's Enye backend challenge",
+		routes: {
+			rates: {
+				url: '/api/rates',
+				query: {
+					base: {
+						validation: 'Required',
+						example: '/api/rates?base=USD',
+					},
+					currency: {
+						validation: 'Optional. Defaults to all rates',
+						example: '/api/rates?base=USD&currency=CAD,CZK',
+					},
+				},
+			},
+		},
+	});
+});
+
 app.get('/api/rates', async function (req, res) {
 	let { base = '', currency = '' } = req.query;
 	let filteredRates = {};
 
 	if (!base) {
 		return res.status(400).json({
-			error: 'base query is required',
+			error: 'base rate is required',
 		});
 	}
 
