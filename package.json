@@ -1,0 +1,25 @@
+{
+	"name": "enyebackend",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/oleesir/enyebackend.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/oleesir/enyebackend/issues"
+	},
+	"homepage": "https://github.com/oleesir/enyebackend#readme",
+	"dependencies": {
+		"axios": "^0.21.1",
+		"express": "^4.17.1",
+		"nodemon": "^2.0.7"
+	}
+}
